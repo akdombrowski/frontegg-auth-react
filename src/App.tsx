@@ -19,16 +19,21 @@ function App() {
       {isAuthenticated ? (
         <div>
           <div>
-            <img src={user?.profilePictureUrl} alt={user?.name} />
+            <img
+              src={user?.profilePictureUrl || "https://ibb.co/MgBTVxJ"}
+              alt={user?.name}
+            />
           </div>
           <div>
             <span>Logged in as: {user?.name}</span>
           </div>
-          <div>
-            <button onClick={() => alert(user.accessToken)}>
-              What is my access token?
-            </button>
-          </div>
+          {user?.accessToken && (
+            <div>
+              <button onClick={() => alert(user.accessToken)}>
+                What is my access token?
+              </button>
+            </div>
+          )}
           <div>
             <button onClick={() => logout()}>Click to logout</button>
           </div>
