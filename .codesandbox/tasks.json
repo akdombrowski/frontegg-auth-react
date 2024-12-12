@@ -24,8 +24,10 @@
     },
     "preview": {
       "name": "preview",
+      "port": 5173,
       "command": "pnpm preview",
-      "runAtStart": false
+      "runAtStart": false,
+      "prLink": "direct"
     },
     "install": {
       "name": "install dependencies",
